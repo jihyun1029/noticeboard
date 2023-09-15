@@ -2,7 +2,7 @@
 <%@page import="java.util.List"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%
-	List<News> newsList = (List)request.getAttribute("newsList");
+	List<News> newsList = (List) request.getAttribute("newsList");
 %>
 <!DOCTYPE html>
 <html>
@@ -25,20 +25,18 @@ tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<%@ include file="../inc/header_link.jsp" %>
 <script type="text/javascript">
 	$(function() {
 		$("button").click(function() {
-			location.href="/news/registform";
+			location.href = "/news/registform";
 		});
 	});
 </script>
 </head>
 <body>
-
-	<h2>Zebra Striped Table</h2>
-	<p>For zebra-striped tables, use the nth-child() selector and add a
-		background-color to all even (or odd) table rows:</p>
+	<%@ include file="../inc/top_navi.jsp" %>
 
 	<table>
 		<tr>
@@ -48,24 +46,22 @@ tr:nth-child(even) {
 			<th>작성일</th>
 			<th>조회수</th>
 		</tr>
-		<%for(int i=0; i<newsList.size(); i++) { %>
-			<%News news = newsList.get(i); %>
+		<%for (int i = 0; i < newsList.size(); i++) {%>
+		<%News news = newsList.get(i);%>
 		<tr>
 			<td>Jill</td>
-			<td><a href="/news/content?news_idx=<%=news.getNews_idx()%>"><%=news.getTitle() %></a></td>
-			<td><%=news.getWriter() %></td>
-			<td><%=news.getRegdate() %></td>
-			<td><%=news.getHit() %></td>
+			<td><a href="/news/content?news_idx=<%=news.getNews_idx()%>"><%=news.getTitle()%></a></td>
+			<td><%=news.getWriter()%></td>
+			<td><%=news.getRegdate()%></td>
+			<td><%=news.getHit()%></td>
 		</tr>
-		<% } %>
+		<%}%>
 		<tr>
 			<td colspan="5"><button>글등록</button></td>
 		</tr>
-		
+
 		<tr>
-			<td colspan="5" style="text-align:center">
-				[1][2]
-			</td>
+			<td colspan="5" style="text-align: center">[1][2]</td>
 		</tr>
 	</table>
 
