@@ -42,6 +42,11 @@ public class NewsController {
 	// 글등록
 	@PostMapping("/news/regist")
 	public ModelAndView regist(News news) {
+		
+		//System.out.println("===== news/regist이 호출되었습니다.");
+		
+		System.out.println("===== news"+ news.toString());
+		
 		// 3단계 : 오라클에 넣기
 		newsService.insert(news);
 		

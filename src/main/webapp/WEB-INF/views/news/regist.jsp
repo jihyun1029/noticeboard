@@ -46,19 +46,25 @@ input[type=button]:hover {
 <%@ include file="../inc/header_link.jsp" %>
 <script type="text/javascript">
 	function regsit() {
+		
+		//console.log('regist() 호출');
+		//alert('regist() 호출');
+		
 		// 동기방식으로 전송
 		$("form").attr({
 			action : "/news/regist",
 			method : "post"
 		});
+		
 		$("form").submit();
 	}
 	
 	$(function() {
-		$('#content').summernote();
+		//$('#content').summernote();
 		
 		// 등록버튼 이벤트
 		$("#bt_regist").click(function() {
+			//alert('bt_regist 클릭되었습니다.');
 			regsit();
 		});
 		

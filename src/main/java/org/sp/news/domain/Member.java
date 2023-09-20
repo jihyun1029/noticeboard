@@ -1,5 +1,7 @@
 package org.sp.news.domain;
 
+import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -12,4 +14,9 @@ public class Member {
 	private String name;
 	private String emil;
 	private String agree;
+	
+	// 한명의 회원은 여러개의 취미를 가질 수 있다..
+	private int[] hobby_idx;
+	
+	//private List<Hobby> hobbyList;
 }
